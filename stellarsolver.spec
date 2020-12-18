@@ -1,6 +1,6 @@
 %define major 1
-%define libname %mklibname stellarsolver %{major}
-%define devname %mklibname stellarsolver -d
+%define libname %mklibname %{name} %{major}
+%define devname %mklibname %{name} -d
 
 Summary:        Astrometric Solver
 Name:           stellarsolver
@@ -49,12 +49,11 @@ Development headers and libraries for %{name}.
 %install
 %ninja_install
 
-
 %files -n %{libname}
 %{_libdir}/libstellarsolver.so.%{sover}
 %{_libdir}/libstellarsolver.so.%{version}
 
-%files %{devname}
+%files -n %{devname}
 %license LICENSE
 %{_includedir}/libstellarsolver/
 %{_libdir}/cmake/StellarSolver/
