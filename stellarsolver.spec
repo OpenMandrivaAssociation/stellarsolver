@@ -11,6 +11,7 @@ Group:          Graphical desktop/KDE
 URL:            https://github.com/rlancaste/stellarsolver
 Source0:        https://github.com/rlancaste/stellarsolver/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildRequires:  ninja
+BuildRequires:  qmake5
 BuildRequires:  cmake(Qt5Concurrent)
 BuildRequires:  cmake(Qt5Core)
 BuildRequires:  cmake(Qt5Gui)
