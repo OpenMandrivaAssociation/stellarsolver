@@ -52,8 +52,7 @@ Development headers and libraries for %{name}.
 %ninja_install -C build
 
 %files -n %{libname}
-%{_libdir}/libstellarsolver.so.%{sover}
-%{_libdir}/libstellarsolver.so.%{version}
+%{_libdir}/libstellarsolver.so.%{major}*
 
 %files -n %{devname}
 %license LICENSE
