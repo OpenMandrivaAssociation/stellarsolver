@@ -49,7 +49,7 @@ Development headers and libraries for %{name}.
 %ninja_build
 
 %install
-%ninja_install
+%ninja_install -C build
 
 %files -n %{libname}
 %{_libdir}/libstellarsolver.so.%{sover}
