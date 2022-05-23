@@ -1,10 +1,10 @@
-%define major 1
+%define major 2
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
 
 Summary:        Astrometric Solver
 Name:           stellarsolver
-Version:        1.9
+Version:        2.3
 Release:        1
 License:        GPL-3.0-only
 Group:          Graphical desktop/KDE
