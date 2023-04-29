@@ -20,6 +20,8 @@ BuildRequires:  cmake(Qt5Widgets)
 BuildRequires:  pkgconfig(cfitsio)
 BuildRequires:  pkgconfig(gsl)
 BuildRequires:  pkgconfig(wcslib)
+# adapt uptram patch for get rid of system qsort
+Patch0:		https://github.com/dstndstn/astrometry.net/commit/1d112038134b79f019ee5d557680a53c36a6cf42.patch
 
 %description
 An Astrometric Plate Solver for Mac, Linux, and Windows,
