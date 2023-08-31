@@ -4,8 +4,8 @@
 
 Summary:        Astrometric Solver
 Name:           stellarsolver
-Version:        2.4
-Release:        3
+Version:        2.5
+Release:        1
 License:        GPL-3.0-only
 Group:          Graphical desktop/KDE
 URL:            https://github.com/rlancaste/stellarsolver
