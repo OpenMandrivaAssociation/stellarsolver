@@ -49,7 +49,7 @@ Development headers and libraries for %{name}.
 
 %build
 %cmake \
-        -USE_QT5=OFF \
+        -DUSE_QT5=OFF \
         -G Ninja
 %ninja_build
 
