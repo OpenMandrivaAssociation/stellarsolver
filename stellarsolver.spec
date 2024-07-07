@@ -4,19 +4,19 @@
 
 Summary:        Astrometric Solver
 Name:           stellarsolver
-Version:        2.5
+Version:        2.6
 Release:        1
 License:        GPL-3.0-only
 Group:          Graphical desktop/KDE
 URL:            https://github.com/rlancaste/stellarsolver
 Source0:        https://github.com/rlancaste/stellarsolver/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildRequires:  ninja
-BuildRequires:  qmake5
-BuildRequires:  cmake(Qt5Concurrent)
-BuildRequires:  cmake(Qt5Core)
-BuildRequires:  cmake(Qt5Gui)
-BuildRequires:  cmake(Qt5Network)
-BuildRequires:  cmake(Qt5Widgets)
+BuildRequires:  qmake-qt6
+BuildRequires:  cmake(Qt6Concurrent)
+BuildRequires:  cmake(Qt6Core)
+BuildRequires:  cmake(Qt6Gui)
+BuildRequires:  cmake(Qt6Network)
+BuildRequires:  cmake(Qt6Widgets)
 BuildRequires:  pkgconfig(cfitsio)
 BuildRequires:  pkgconfig(gsl)
 BuildRequires:  pkgconfig(wcslib)
@@ -48,7 +48,9 @@ Development headers and libraries for %{name}.
 %autosetup -p1
 
 %build
-%cmake -G Ninja
+%cmake \
+        -USE_QT5=OFF \
+        -G Ninja
 %ninja_build
 
 %install
