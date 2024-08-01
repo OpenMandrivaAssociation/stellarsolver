@@ -22,7 +22,7 @@ BuildRequires:  pkgconfig(gsl)
 BuildRequires:  pkgconfig(wcslib)
 # adapt uptram patch for get rid of system qsort
 #		https://github.com/dstndstn/astrometry.net/commit/1d112038134b79f019ee5d557680a53c36a6cf42
-Patch0:		stellarsolver-2.4-fix_qsort.patch
+#Patch0:		stellarsolver-2.4-fix_qsort.patch
 
 %description
 An Astrometric Plate Solver for Mac, Linux, and Windows,
