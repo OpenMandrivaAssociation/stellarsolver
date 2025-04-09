@@ -11,18 +11,23 @@ Group:          Graphical desktop/KDE
 URL:            https://github.com/rlancaste/stellarsolver
 Source0:        https://github.com/rlancaste/stellarsolver/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildRequires:  ninja
-BuildRequires:  qmake5
-BuildRequires:  cmake(Qt5Concurrent)
-BuildRequires:  cmake(Qt5Core)
-BuildRequires:  cmake(Qt5Gui)
-BuildRequires:  cmake(Qt5Network)
-BuildRequires:  cmake(Qt5Widgets)
+BuildRequires:  qmake-qt6
+BuildRequires:  cmake(Qt6Concurrent)
+BuildRequires:  cmake(Qt6Core)
+BuildRequires:  cmake(Qt6Gui)
+BuildRequires:  cmake(Qt6Network)
+BuildRequires:  cmake(Qt6Widgets)
 BuildRequires:  pkgconfig(cfitsio)
 BuildRequires:  pkgconfig(gsl)
 BuildRequires:  pkgconfig(wcslib)
 # adapt uptram patch for get rid of system qsort
 #		https://github.com/dstndstn/astrometry.net/commit/1d112038134b79f019ee5d557680a53c36a6cf42
 #Patch0:		stellarsolver-2.4-fix_qsort.patch
+BuildSystem:	cmake
+BuildOption:	-DUSE_QT5:BOOL=OFF
+
+%patchlist
+stellarsolver-2.6-compile.patch
 
 %description
 An Astrometric Plate Solver for Mac, Linux, and Windows,
@@ -43,16 +48,6 @@ Requires:       %{libname} = %{EVRD}
 
 %description -n %{devname}
 Development headers and libraries for %{name}.
-
-%prep
-%autosetup -p1
-
-%build
-%cmake -G Ninja
-%ninja_build
-
-%install
-%ninja_install -C build
 
 %files -n %{libname}
 %{_libdir}/libstellarsolver.so.%{major}*

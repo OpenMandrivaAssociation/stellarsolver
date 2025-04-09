@@ -1,0 +1,12 @@
+diff -up stellarsolver-2.6/stellarsolver/astrometry/qfits-an/qfits_memory.c.omv~ stellarsolver-2.6/stellarsolver/astrometry/qfits-an/qfits_memory.c
+--- stellarsolver-2.6/stellarsolver/astrometry/qfits-an/qfits_memory.c.omv~	2025-04-09 16:30:31.319279951 +0200
++++ stellarsolver-2.6/stellarsolver/astrometry/qfits-an/qfits_memory.c	2025-04-09 16:30:44.821135185 +0200
+@@ -331,7 +331,7 @@ void * qfits_memory_malloc(
+         /* Create swap file with rights: rw-rw-rw- */
+         swapfileid = ++ qfits_memory_table.file_reg;
+         fname = qfits_memory_tmpfilename(swapfileid);
+-        swapfd = open(fname, O_RDWR | O_CREAT);
++        swapfd = open(fname, O_RDWR | O_CREAT, 0600);
+         if (swapfd==-1) {
+             debug("qfits_mem: cannot create swap file\n"); //# Modified by Robert Lancaster for the StellarSolver Internal Library for logging
+             exit(-1);
