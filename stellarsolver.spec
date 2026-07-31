@@ -4,8 +4,8 @@
 
 Summary:        Astrometric Solver
 Name:           stellarsolver
-Version:        2.6
-Release:        2
+Version:        2.8
+Release:        1
 License:        GPL-3.0-only
 Group:          Graphical desktop/KDE
 URL:            https://github.com/rlancaste/stellarsolver
@@ -27,7 +27,7 @@ BuildSystem:	cmake
 BuildOption:	-DUSE_QT5:BOOL=OFF
 
 %patchlist
-stellarsolver-2.6-compile.patch
+# dropped (no longer applies): stellarsolver-2.8-compile.patch
 
 %description
 An Astrometric Plate Solver for Mac, Linux, and Windows,
